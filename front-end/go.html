@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>Seen It</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+
+      <link rel="icon" type="image/ico" href="img/favicon.png">
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700|Bad+Script|Pacifico' rel='stylesheet' type='text/css'>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    <link rel="stylesheet" href="css/style.css">  
+
+  </head>
+
+<body>
+
+<!--map back-->
+<div id="googlemaps"></div>
+
+<!--body-->
+<div class="row">
+<!--intro/form-->
+  <div class="large-6 columns">
+    <div class="container">
+    <h1>SEEN IT</h1>
+    <h2>is navigation software for adventurers.</h2>
+    <h4>We take you from point A to point B, without missing everything in between.</h4>
+    <p>Here's to the journey rather than the destination. Here's to taking the plunge, to the best day of your life, to accidental love. Here's to the subliminal in the quotidien. Here's to the wanderlust in us all.</p>
+    <h4>Take the path less traveled by. It will make all the difference.</h4>
+
+      <form class="location-form">
+      <div class="name">
+        <input type="text" id="from" placeholder="traveling from:"/>
+      </div>
+      <div class="email">
+        <input type="text" id="to" placeholder="to:"/>
+      </div>
+      <div class="submit">
+        <input type="button" value="START YOUR ADVENTURE NOW:" class="button" onclick="document.getElementById('message').value='This is a demo only.'"/>
+      </div>
+      </form>
+    </div>
+  </div>
+
+<!--choices list-->
+  <div class="large-6 columns">
+    <div class="container">
+    <ul>
+    <li>1</li>
+    <li>2</li>
+    </ul>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+<!--map-->
+  <div class="large-6 columns">
+    <div class="container">
+    insert map here
+    </div>
+  </div>
+<!--directions-->
+  <div class="large-6 columns">
+    <div class="container">
+    insert directions here
+    </div>
+  </div>
+</div>
+
+<!--scripts on scripts-->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+<script src="js/foundation.min.js"></script>
+
+<script type="text/javascript">
+ 
+// The latitude and longitude of your business / place
+var position = [40.5027753, -74.4523305];
+ 
+function showGoogleMaps() {
+ 
+    var latLng = new google.maps.LatLng(position[0], position[1]);
+ 
+    var mapOptions = {
+        zoom: 14, // initialize zoom level - the max value is 21
+        streetViewControl: false, // hide the yellow Street View pegman
+        scaleControl: false, // allow users to zoom the Google Map
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        center: latLng
+    };
+ 
+    map = new google.maps.Map(document.getElementById('googlemaps'),
+        mapOptions);
+ 
+    // Show the default red marker at the location
+    marker = new google.maps.Marker({
+        position: latLng,
+        map: map,
+        draggable: false,
+        animation: google.maps.Animation.DROP
+    });
+}
+ 
+google.maps.event.addDomListener(window, 'load', showGoogleMaps);
+</script>
+
+</body>
+</html>

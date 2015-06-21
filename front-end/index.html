@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>Seen It</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+          <link rel="icon" type="image/ico" href="img/favicon.png">
+
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    <link rel="stylesheet" href="css/style.css">  
+
+  </head>
+
+<body>
+
+<!--map back-->
+<div id="googlemaps"></div>
+
+<!--photo-->
+<div class="row">
+<div class="large-12 columns">
+<div class="fadein" id="billboard"> <img src="img/back1.jpg"><img src="img/back2.jpg"><img src="img/back3.jpg"><img src="img/back4.jpg"><img src="img/back5.jpg"><img src="img/back6.jpg">
+</div>
+</div>
+</div>
+
+<a href="go.html"><img  id="car" src="img/car.png"></a>
+
+<!--scripts on scripts-->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+<script src="js/foundation.min.js"></script>
+
+<script type="text/javascript">
+ 
+// The latitude and longitude of your business / place
+var position = [40.5027753, -74.4523305];
+ 
+function showGoogleMaps() {
+ 
+    var latLng = new google.maps.LatLng(position[0], position[1]);
+ 
+    var mapOptions = {
+        zoom: 14, // initialize zoom level - the max value is 21
+        streetViewControl: false, // hide the yellow Street View pegman
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        center: latLng
+    };
+ 
+    map = new google.maps.Map(document.getElementById('googlemaps'),
+        mapOptions);
+ 
+    // Show the default red marker at the location
+    marker = new google.maps.Marker({
+        position: latLng,
+        map: map,
+        draggable: false,
+        animation: google.maps.Animation.DROP
+    });
+}
+ 
+google.maps.event.addDomListener(window, 'load', showGoogleMaps);
+</script>
+
+<script type="text/javascript">
+$(function(){
+    $('.fadein img:gt(0)').hide();
+    setInterval(function(){
+      $('.fadein :first-child').fadeOut()
+         .next('img').fadeIn()
+         .end().appendTo('.fadein');}, 
+      4000);
+});
+</script>
+
+</body>
+</html>
