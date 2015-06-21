@@ -1,9 +1,84 @@
-div{
-	height: 500px;
-	width: 500px;
+#googlemaps{
+  height:130%;
+  width:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:0;
+  opacity:.50}
+
+h1{
+  font-size: 65px;
+  letter-spacing: 12px;
+  font-family: 'Bad Script', cursive;
+padding-top: 20px;
+
+}
+h2{
+  font-size: 20px;
+    font-family: 'Bad Script', cursive;
+    margin-top: -10px;
+    padding-bottom: 10px;
+
 }
 
-#directionsPanel{
-	height: 200px;
-	width: 200px;
+
+h4{
+font-size: 15px;
+}
+
+p{
+font-size: 12px;
+}
+
+
+h3{
+font-size: 16px;
+font-weight: 400;
+}
+
+
+#billboard{
+  margin:70px auto 0;
+
+  z-index: 2; /* The z-index should be higher than Google Maps */
+
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+  -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+}
+
+.fadein { position:relative; width:550px; height:400px; }
+.fadein img { position:absolute; left:250; top:25; }
+
+#car{
+position: absolute;
+top: 405px;
+left: 548px;
+z-index: 100;
+}
+
+.container { 
+  text-align: center;
+  position: relative; 
+  z-index: 3; /* The z-index should be higher than Google Maps */
+  margin: 35px auto 20px;
+  padding: 30px;
+  background: rgba(256,256,256,.85);
+  height: auto;
+  min-height: 550px;
+  color: #555555;
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+  -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+}
+
+.location-form{
+  padding-top: 20px;
+}
+body{
+font-family: 'Lato', sans-serif;}
+
+.center{
+  text-align: center;
 }

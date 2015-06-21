@@ -7,6 +7,7 @@ app.set('view engine', 'jade');
 /* Handle all requests to '/' */
 var home = require('./routes/home');
 app.get('/', home.render_home);
+app.get('/go', home.render_go);
 
 /* Handle all requests to '/places' */
 app.get('/places/:lat/:lng', home.places);

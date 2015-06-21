@@ -23,10 +23,10 @@ function show_map(){
 
 
 function setup(){
-  	stops = Number(document.getElementById("extra").value);
+  	stops = Number(document.getElementById("stops").value);
 
   	var xhr = new XMLHttpRequest();
-	var url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + document.getElementById("start").value + "&key=AIzaSyAFXNrOH6LjH8eO-klJs4AynqJU0dADpNE";
+	var url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + document.getElementById("from").value + "&key=AIzaSyAFXNrOH6LjH8eO-klJs4AynqJU0dADpNE";
 	xhr.open("GET", url, false);
 	xhr.onreadystatechange = function() {
   		if (xhr.readyState == 4) {
@@ -39,7 +39,7 @@ function setup(){
 	xhr.send(); 
 
 	var xhr = new XMLHttpRequest();
-	var url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + document.getElementById("finish").value + "&key=AIzaSyAFXNrOH6LjH8eO-klJs4AynqJU0dADpNE";
+	var url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + document.getElementById("to").value + "&key=AIzaSyAFXNrOH6LjH8eO-klJs4AynqJU0dADpNE";
 	xhr.open("GET", url, false);
 	xhr.onreadystatechange = function() {
   		if (xhr.readyState == 4) {
@@ -54,8 +54,8 @@ function setup(){
 
 	lat_diff = Math.abs(lat_start - lat_end);
 	long_diff = Math.abs(long_start - long_end);
-	lat_increment = lat_diff/stops;
-	long_increment = long_diff/stops;
+	lat_increment = lat_diff/(stops + 1);
+	long_increment = long_diff/(stops + 1);
 
 	console.log('lat' + lat_increment);
 	console.log('long' + long_increment);
@@ -100,7 +100,7 @@ function get_places(){
 	    places = p.results;
 
 	    for(i = 0; i < places.length && i < 10; i++){
-	    	inner += '<li onClick="get_places(); stop_route(this.id)" id="' + i + '"> Name: ' + places[i].name + '</li>';
+	    	inner += '<li onClick="get_places(); stop_route(this.id)" id="' + i + '">' + places[i].name + '</li>';
 	    	document.getElementById("all_places").innerHTML = inner;
 	    }
 
@@ -148,5 +148,4 @@ function done(){
   	});
 }
 
-setup();
 google.maps.event.addDomListener(window, 'load', show_map); //init_map once page is loaded

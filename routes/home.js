@@ -1,6 +1,6 @@
 /* This function renders the home page. */
 var render_home = function(req, res){
-	res.sendFile(require('path').join(__dirname, '/../views/home.html'));
+	res.sendFile(require('path').join(__dirname, '/../front-end/index.html'));
 }
 exports.render_home = render_home;
 
@@ -24,8 +24,13 @@ var places = function(req, res){
 	  });
 	}
 
-	var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + req.params.lat + ',' + req.params.lng + '&radius=500&key=AIzaSyCAGvyberFaujNn5pIm5XvdwlJpBAXVeiQ';
+	var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + req.params.lat + ',' + req.params.lng + '&radius=48280.3&types=amusement_park|aquarium|museum|zoo|park|food&key=AIzaSyCAGvyberFaujNn5pIm5XvdwlJpBAXVeiQ';
 	console.log(url);
 	https.get(url, callback);
 }
 exports.places = places;
+
+function render_go(req, res){
+	res.sendFile(require('path').join(__dirname, '/../views/go.html'));
+}
+exports.render_go = render_go;

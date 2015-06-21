@@ -8,6 +8,7 @@
   "dependencies": {
     "express": "^4.12.4",
     "jade": "~1.9.2",
-    "request": "^2.58.0"
+    "request": "^2.58.0",
+    "serve-favicon": "^2.3.0"
   }
 }
