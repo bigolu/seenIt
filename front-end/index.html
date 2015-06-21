@@ -43,7 +43,11 @@ function showGoogleMaps() {
     var latLng = new google.maps.LatLng(position[0], position[1]);
  
     var mapOptions = {
-        zoom: 14, // initialize zoom level - the max value is 21
+        zoom: 14, // initialize zoom level - the max value is 
+        disableDefaultUI: true,
+        scaleControl: false,
+        zoomControl: false,
+        scrollwheel: false,
         streetViewControl: false, // hide the yellow Street View pegman
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         center: latLng
