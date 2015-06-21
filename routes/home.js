@@ -24,7 +24,7 @@ var places = function(req, res){
 	  });
 	}
 
-	var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + req.params.lat + ',' + req.params.lng + '&radius=48280.3&types=amusement_park|aquarium|museum|zoo|park|food&key=AIzaSyCAGvyberFaujNn5pIm5XvdwlJpBAXVeiQ';
+	var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + req.params.lat + ',' + req.params.lng + '&radius=48280.3&types=amusement_park|aquarium|museum|zoo|park&key=AIzaSyCAGvyberFaujNn5pIm5XvdwlJpBAXVeiQ';
 	console.log(url);
 	https.get(url, callback);
 }
