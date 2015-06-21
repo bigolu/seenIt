@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Directions service</title>
+    <link href="stylesheets/style.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+
+
+  <div id="map-canvas"></div>
+<div id="directionsPanel"></div>
+<div id="places"><ol id="all_places"> </ol></div>
+<input id="extra" value="4"> extra
+<input id="finish" value="san francisco"> finish
+<input id="start" value="cliffside park"> start
+<button onclick="start_trip()"></button>
+
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script src="javascripts/jquery-1.11.3.js"></script>
+    <script src="javascripts/home.js"></script>
+  </body>
+</html>
