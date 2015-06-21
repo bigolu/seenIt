@@ -10,7 +10,7 @@
 h1{
   font-size: 65px;
   letter-spacing: 12px;
-  font-family: 'Bad Script', cursive;
+  font-family: 'Fredericka the Great', cursive;
 padding-top: 20px;
 
 }
@@ -67,10 +67,18 @@ z-index: 100;
   padding: 30px;
   background: rgba(256,256,256,.85);
   height: auto;
-  min-height: 570px;
+  min-height: 625px;
   color: #555555;
   -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5);
   -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+}
+li{
+  list-style: none;
+}
+li:hover{
+    list-style: none;
+
+  opacity: .5;
 }
 
 .location-form{
