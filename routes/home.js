@@ -4,8 +4,8 @@ var render_home = function(req, res){
 }
 exports.render_home = render_home;
 
-/* Returns most popular place in given area */
-var places = function(req, res){ 
+/* Returns most popular places in given area */
+var places = function(req, res){
 	var request = require('request');
 
 	var https = require('https');
