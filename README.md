@@ -5,5 +5,5 @@ After navigating to the <a href="https://seenit-ru.herokuapp.com/"> site</a>, th
 
 ![alt tag](https://raw.githubusercontent.com/biggie96/seenIt/master/example.png)
 
-##Resources
+## Resources
 <a href="https://developers.google.com/maps/?hl=en"> Google Maps API</a> and <a href="https://www.heroku.com/"> Heroku</a>.
